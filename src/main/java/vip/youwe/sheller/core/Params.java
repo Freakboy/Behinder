@@ -1,10 +1,10 @@
 package vip.youwe.sheller.core;
 
 import com.sun.org.apache.xerces.internal.impl.dv.util.Base64;
-import com.sun.xml.internal.ws.org.objectweb.asm.ClassAdapter;
-import com.sun.xml.internal.ws.org.objectweb.asm.ClassReader;
-import com.sun.xml.internal.ws.org.objectweb.asm.ClassWriter;
-import com.sun.xml.internal.ws.org.objectweb.asm.FieldVisitor;
+import org.objectweb.asm.ClassAdapter;
+import org.objectweb.asm.ClassReader;
+import org.objectweb.asm.ClassWriter;
+import org.objectweb.asm.FieldVisitor;
 import vip.youwe.sheller.utils.ReplacingInputStream;
 import vip.youwe.sheller.utils.Utils;
 

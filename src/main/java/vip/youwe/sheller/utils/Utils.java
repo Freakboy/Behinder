@@ -806,8 +806,7 @@ public class Utils {
         }
     }
 
-    public static class MyJavaFileManager
-            extends ForwardingJavaFileManager<JavaFileManager> {
+    public static class MyJavaFileManager extends ForwardingJavaFileManager<JavaFileManager> {
         protected MyJavaFileManager(JavaFileManager fileManager) {
             super(fileManager);
         }

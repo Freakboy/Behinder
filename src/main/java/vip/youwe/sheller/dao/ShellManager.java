@@ -24,7 +24,7 @@ public class ShellManager {
         DB_URL = "jdbc:sqlite:" + DB_PATH;
         if (!(new File(DB_PATH)).exists())
             throw new Exception("数据库文件丢失，无法启动。");
-        Class.forName("org.sqlite.JDBC");
+        Class.forName(Class_Name);
         connection = DriverManager.getConnection(DB_URL);
         connection.setAutoCommit(true);
     }

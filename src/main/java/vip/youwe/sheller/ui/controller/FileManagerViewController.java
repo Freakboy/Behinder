@@ -540,7 +540,8 @@ public class FileManagerViewController {
     }
 
     private void expandByPath(String pathStr) throws UnsupportedEncodingException {
-        Path path = Paths.get(pathStr, new String[0]).normalize();
+        // Path path = Paths.get(pathStr).normalize();
+        Path path = Paths.get(pathStr);
         String pathString = path.toString().endsWith("/") ? path.toString() : (path.toString() + "/");
         TreeItem currentTreeItem = findTreeItemByPath(path);
         this.currentPathCombo.setValue(pathString);
@@ -639,7 +640,7 @@ public class FileManagerViewController {
             String type = ((StringProperty) ((List) this.fileListTableView.getSelectionModel().getSelectedItem()).get(3)).getValue();
             String name = ((StringProperty) ((List) this.fileListTableView.getSelectionModel().getSelectedItem()).get(0)).getValue();
             String pathString = this.currentPathCombo.getValue().toString();
-            pathString = Paths.get(pathString, new String[0]).normalize().toString();
+            pathString = Paths.get(pathString).normalize().toString();
             if (!pathString.endsWith("/")) {
                 pathString = pathString + "/";
             }
@@ -655,7 +656,7 @@ public class FileManagerViewController {
 
                 String filePathString = pathString;
                 this.filePathText.setText(pathString);
-                String charset = this.charsetCombo.getValue().toString().equals("����") ? null : this.charsetCombo.getValue().toString();
+                String charset = this.charsetCombo.getValue().toString().equals("自动") ? null : this.charsetCombo.getValue().toString();
                 showFile(filePathString, charset);
             }
         });
